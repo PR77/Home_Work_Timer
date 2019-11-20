@@ -30,7 +30,6 @@ For those wanting to build their own hardware, here is the BOM;
 | Buzzer       | Piezo Passive Buzzer   |
 | Switch       | N/O Push Button        |
 
-
 ### SW Libraries
 For this design, I used the following open source libraries:
 
