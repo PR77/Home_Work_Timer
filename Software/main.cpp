@@ -49,6 +49,8 @@ static RGB_t encodeColour(uint16_t colourValue) {
 
     // This function will encode colourValue into a scale from GREEN [0] to
     // RED [511]
+    //
+    // https://www.google.de/search?q=rbg+colour+picker&ie=&oe=
 
     RGB_t desiredColour;
 
@@ -81,6 +83,11 @@ void setup() {
     pinMode(LED_PIN, OUTPUT);
     pinMode(BEEPER_PIN, OUTPUT);
     pinMode(BUTTON_PIN, INPUT_PULLUP);
+
+    rgb[0].r = 0;
+    rgb[0].g = 0;
+    rgb[0].b = 255;
+    WS2811RGB(rgb, ARRAYLEN(rgb));
 }
 
 //=============================================================================
@@ -90,8 +97,6 @@ void setup() {
 // Short press: Sets LED to GREEN, short Beep and starts TOTAL_TIME timer.
 //              During TOTAL_TIME period LED will fade from GREEN to RED.
 //              While LED is RED long beep for 1 second. LED remains on.
-//
-// Long press:  Programming mode.
 //=============================================================================
 void loop() {
 
